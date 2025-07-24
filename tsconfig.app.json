@@ -1,12 +1,13 @@
 {
   "compilerOptions": {
-    "noEmit": true,  // This prevents TS from generating .js files
+    "noEmit": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
     "target": "ES2022",
     "useDefineForClassFields": true,
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "allowJs": true,
     
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -21,13 +22,15 @@
       "@/*": ["./src/*"]
     },
     
+    /* Types */
+    "types": ["node", "vite/client"],
+    
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["src", "src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }

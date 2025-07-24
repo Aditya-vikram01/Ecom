@@ -1,6 +1,13 @@
 import { NavigationMenuTrigger } from '@radix-ui/react-navigation-menu';
 import { NavigationMenu, NavigationMenuContent, NavigationMenuItem, NavigationMenuList } from '../../components/ui/navigation-menu';
+import { useNavigate } from 'react-router-dom';
 const MinorHeader = () => {
+  const navigate = useNavigate();
+
+  const handleSignInClick = () => {
+    navigate('/signin');
+  };
+
   return (
     <div className='w-full flex items-center justify-between px-6 py-2'>
       {/* Left Section - FIXED: Constrained width */}
@@ -42,7 +49,10 @@ const MinorHeader = () => {
               </NavigationMenuItem>
 
               <NavigationMenuItem>
-                <NavigationMenuTrigger className='text-sm font-medium cursor-pointer hover:text-gray-600 transition-colors whitespace-nowrap px-2 py-1'>
+                <NavigationMenuTrigger
+                  className='text-sm font-medium cursor-pointer hover:text-gray-600 transition-colors whitespace-nowrap px-2 py-1'
+                  onClick={handleSignInClick}
+                >
                   Sign In
                 </NavigationMenuTrigger>
               </NavigationMenuItem>
