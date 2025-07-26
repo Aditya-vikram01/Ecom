@@ -9,13 +9,21 @@ const Home = () => {
   const arr2 = [1, 2, 3];
   return (
     <>
-      <div >
+      <div className='bg-gray-100'>
         <Header />
         <Carousel />
-        <Main arr={arr} />
-        <Hero />
-        <Main arr={arr2} />
-        <Footer />
+        <div className='mt-15'>
+          <Main arr={arr} />
+        </div>
+        <div className='mt-15'>
+          <Hero />
+        </div>
+        <div className='mt-15'>
+          <Main arr={arr2} />
+        </div>
+        <div className='mt-15'>
+          <Footer />
+        </div>
       </div>
     </>
   );
